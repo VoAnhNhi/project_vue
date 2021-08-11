@@ -1,16 +1,16 @@
 {
     "items":[
-        { "id": 1,"name": "Sản phẩm 1", "description":"This is item 1", "price": 150000, "src": "item.png"},
-        { "id": 2,"name": "Sản phẩm 2", "description":"This is item 2", "price": 250000, "src": "item.png"},
-        { "id": 3,"name": "Sản phẩm 3", "description":"This is item 3", "price": 199000, "src": "item.png"},
-        { "id": 4,"name": "Sản phẩm 4", "description":"This is item 4", "price": 350000, "src": "item.png"},
-        { "id": 5,"name": "Sản phẩm 5", "description":"This is item 5", "price": 148000, "src": "item.png"},
-        { "id": 6,"name": "Sản phẩm 6", "description":"This is item 6", "price": 100000, "src": "item.png"},
-        { "id": 7,"name": "Sản phẩm 7", "description":"This is item 7", "price": 120000, "src": "item.png"},
-        { "id": 8,"name": "Sản phẩm 8", "description":"This is item 8", "price": 300000, "src": "item.png"},
-        { "id": 9,"name": "Sản phẩm 9", "description":"This is item 9", "price": 148000, "src": "item.png"},
-        { "id": 10,"name": "Sản phẩm 10", "description":"This is item 10", "price": 100000, "src": "item.png"},
-        { "id": 11,"name": "Sản phẩm 11", "description":"This is item 11", "price": 250000, "src": "item.png"},
-        { "id": 12,"name": "Sản phẩm 12", "description":"This is item 12", "price": 350000, "src": "item.png"}
+        { "id": 1,"name": "Sản phẩm 1", "description":{"brand": "Phụng Store","nsx":2021,"made_in":"Việt Nam"}, "price": 150000, "src": "item.png"},
+        { "id": 2,"name": "Sản phẩm 2", "description":{"brand": "Phụng Store","nsx":2021,"made_in":"Việt Nam"}, "price": 250000, "src": "item.png"},
+        { "id": 3,"name": "Sản phẩm 3", "description":{"brand": "Phụng Store","nsx":2021,"made_in":"Việt Nam"}, "price": 199000, "src": "item.png"},
+        { "id": 4,"name": "Sản phẩm 4", "description":{"brand": "Phụng Store","nsx":2021,"made_in":"Việt Nam"}, "price": 350000, "src": "item.png"},
+        { "id": 5,"name": "Sản phẩm 5", "description":{"brand": "Phụng Store","nsx":2021,"made_in":"Việt Nam"}, "price": 148000, "src": "item.png"},
+        { "id": 6,"name": "Sản phẩm 6", "description":{"brand": "Phụng Store","nsx":2021,"made_in":"Việt Nam"}, "price": 100000, "src": "item.png"},
+        { "id": 7,"name": "Sản phẩm 7", "description":{"brand": "Phụng Store","nsx":2021,"made_in":"Việt Nam"}, "price": 120000, "src": "item.png"},
+        { "id": 8,"name": "Sản phẩm 8", "description":{"brand": "Phụng Store","nsx":2021,"made_in":"Việt Nam"}, "price": 300000, "src": "item.png"},
+        { "id": 9,"name": "Sản phẩm 9", "description":{"brand": "Phụng Store","nsx":2021,"made_in":"Việt Nam"}, "price": 148000, "src": "item.png"},
+        { "id": 10,"name": "Sản phẩm 10", "description":{"brand": "Phụng Store","nsx":2021,"made_in":"Việt Nam"}, "price": 100000, "src": "item.png"},
+        { "id": 11,"name": "Sản phẩm 11", "description":{"brand": "Phụng Store","nsx":2021,"made_in":"Việt Nam"}, "price": 250000, "src": "item.png"},
+        { "id": 12,"name": "Sản phẩm 12", "description":{"brand": "Phụng Store","nsx":2021,"made_in":"Việt Nam"}, "price": 350000, "src": "item.png"}
     ]
 }

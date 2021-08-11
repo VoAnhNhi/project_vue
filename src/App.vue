@@ -1,16 +1,18 @@
 <template>
   <v-app id="inspire">
     <v-app-bar app color="yellow lighten-4">
-      <div>
-        <a href="http://localhost:8080/">
-          <v-img :src="require('@/assets/item.png')" max-height="32" max-width="32"></v-img>
-        </a>
-      </div>
+      <v-row>
+        <v-col cols="12" sm="5">
+          <a href="http://localhost:8080/" style="text-decoration: none">
+            <h2 style="font-family: 'Roboto', sans-serif;">Phụng Store</h2>
+          </a>
+        </v-col>
+      </v-row>
       <v-spacer></v-spacer>
-      <v-row justify="center">
-        <v-col cols="6">
+      <v-row >
+        <v-col cols="12">
           <v-card-text>
-            <v-text-field placeholder="Tìm kiếm" class="ma-3"></v-text-field>
+            <v-text-field placeholder="Tìm kiếm sản phẩm" class="ma-3" prepend-icon="mdi-magnify"></v-text-field>
           </v-card-text>
         </v-col>
       </v-row>
@@ -21,7 +23,6 @@
       <Home />
       <router-view></router-view>
     </v-main>
-    <footer />
   </v-app>
 </template>
 

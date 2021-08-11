@@ -13,15 +13,45 @@
             <h2 style="color: #FF4081" class="text-center"> {{ item.price }} VNĐ </h2>
             <v-card-text>
               <h3 class="d-flex flex-column mb-6">Chi tiết sản phẩm</h3>
-              <label class="d-flex flex-column mb-6" v-for="p in productInfo" :key="p"> {{ p }} </label>
-              <h3 class="d-flex flex-column mb-6">Tổng tiền: {{ item.price * quantity }} VNĐ</h3>
+              <v-row>
+                <v-col cols="12" sm="4">
+                  <label>Thương hiệu</label>
+                </v-col>
+                <v-col cols="12" sm="4">
+                  <label>{{ item.description.brand }}</label>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col cols="12" sm="4">
+                  <label>Xuất sứ</label>
+                </v-col>
+                <v-col cols="12" sm="4">
+                  <label>{{item.description.made_in}}</label>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col cols="12" sm="4">
+                  <label>Năm sản xuất</label>
+                </v-col>
+                <v-col cols="12" sm="4">
+                  <label>{{item.description.nsx}}</label>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col cols="12" sm="4">
+                  <h3>Tổng tiền:</h3>
+                </v-col>
+                <v-col cols="12" sm="5">
+                  <h3>{{ item.price * quantity }} VNĐ</h3>
+                </v-col>
+              </v-row>
             </v-card-text>
             <v-row justify="center">
               <v-card-actions>
-                <v-btn small @click="increment"><v-icon>mdi-plus</v-icon></v-btn>
-                <b  class="ma-2"> {{ quantity }} </b>
                 <v-btn small v-if="quantity == 0" @click="decrement" :disabled="true"><v-icon>mdi-minus</v-icon></v-btn>
                 <v-btn small v-else @click="decrement" :disabled="false"><v-icon>mdi-minus</v-icon></v-btn>
+                <b  class="ma-2"> {{ quantity }} </b>
+                <v-btn class="ma-2" small @click="increment"><v-icon>mdi-plus</v-icon></v-btn>
                 <v-btn small @click="addToCart"><v-icon>mdi-cart</v-icon></v-btn>
               </v-card-actions>
             </v-row>   
@@ -41,12 +71,6 @@ export default {
   data () {
     return {
       item: null,
-      rating: 5,
-      productInfo: [
-        'Thương hiệu',
-        'Xuất sứ',
-        'Năm sản xuất',
-      ],
       quantity: 0,
       disabled: false,
       totalCost: 0,
@@ -61,30 +85,32 @@ export default {
     
   },
   methods: {
-    async increment () {
+    increment () {
       this.quantity += 1;
     },
-    async decrement () {
+    decrement () {
       this.quantity -= 1;
     },
     addToCart () {
-      
-      const total = this.item.price * this.quantity
-      const item = {
-        id: this.item.id,
-        name: this.item.name,
-        src: this.item.src,
-        price: this.item.price,
-        quantity: this.quantity,
-        total: total,
-        created_at: new Date()
+      if(this.quantity === 0) {
+        alert('Vui long chon so luong can mua')
       }
-      this.carts.push(item)
-      localStorage['cart'] = JSON.stringify(this.carts)
-      
-      
-      alert('Thêm vào giỏ hàng thành công')
-      this.quantity = 0
+      else{
+        const item = {
+          id: this.item.id,
+          name: this.item.name,
+          src: this.item.src,
+          price: this.item.price,
+          quantity: this.quantity,
+          total: this.item.price * this.quantity,
+          created_at: new Date()
+        }
+        this.carts.push(item)
+        localStorage['cart'] = JSON.stringify(this.carts)
+        this.quantity = 0
+        alert('Thêm vào giỏ hàng thành công')
+        this.$router.push( { name: 'Home'} )
+      }
     }
   },
 }
