@@ -48,7 +48,6 @@ export default {
         password: '',
       },
       loginError: '',
-      disabled: true
     }
   },
   methods: {

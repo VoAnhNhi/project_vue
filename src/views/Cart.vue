@@ -3,7 +3,6 @@
     <v-container>
       <v-card>
         <v-card-title class="green--text">Giỏ hàng</v-card-title>
-        
         <v-card-text>
           <v-simple-table fixed-header height="250px">
             <thead>
@@ -20,9 +19,9 @@
               <tr  v-for="(item,i) in carts" :key="item.id">
                 <td> {{ i+1}} </td>
                 <td><v-img style="float: left" :src="require(`@/assets/${item.src}`)" max-width="70" max-height="60"></v-img><p class="my-5">{{ item.name }}</p>  </td>
-                <td> {{ item.price }} VNĐ </td>
+                <td> {{ formatPrice(item.price) }} VNĐ </td>
                 <td> {{ item.quantity }} </td>
-                <td> {{ item.total }} VNĐ</td>
+                <td> {{ formatPrice(item.total) }} VNĐ</td>
                 <td>
                   <v-btn text rounded @click="deleteItem(i)">
                     <v-icon color="red darken-4">mdi-delete</v-icon>
@@ -36,7 +35,7 @@
         <v-card-actions>
           <v-btn class="my-2 mx-10" small color="red darken-4" dark rounded @click="dialogAll=!dialogAll">Xóa tất cả</v-btn>
           <v-spacer></v-spacer>
-          <h4>Tổng tiền: {{ calculatedTotalCost }} VNĐ</h4>
+          <h4>Tổng tiền: {{ formatPrice(calculatedTotalCost) }} VNĐ</h4>
           <v-btn class="my-2 mx-10" small color="green darken-4" dark rounded >Đặt hàng</v-btn>
         </v-card-actions>
       </v-card>
@@ -91,6 +90,10 @@ export default {
     }
   },
   methods: {
+    formatPrice(value) {
+      let val = (value).toFixed(0)
+      return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    },
     deleteItem (i) {
       this.index = i
       this.dialog = true

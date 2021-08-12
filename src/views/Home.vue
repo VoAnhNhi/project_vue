@@ -7,8 +7,8 @@
             <v-card height="270" class="mx-auto">
               <v-img :src="require(`@/assets/${item.src}`)" max-height="170">
                 <v-expand-transition>
-                  <div v-if="hover" class="d-flex transition-fast-in-fast-out pink lighten-5  v-card--reveal text-h5 black--text" style="height: 100%;">
-                    {{ item.price }} VNĐ
+                  <div v-if="hover" class="d-flex transition-fast-in-fast-out pink lighten-3  v-card--reveal text-h5 black--text" style="height: 100%;">
+                    {{ formatPrice(item.price) }} VNĐ
                   </div>
                 </v-expand-transition>
               </v-img>
@@ -41,6 +41,12 @@ import axios from 'axios'
     async created () {
       const response = await axios.get('http://localhost:3000/items')
       this.items = response.data
+    },
+    methods: {
+      formatPrice(value) {
+        let val = (value).toFixed(0)
+        return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+      }
     }
   }
 </script>

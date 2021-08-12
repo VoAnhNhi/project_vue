@@ -10,7 +10,7 @@
         <div class="d-flex flex-column mb-6">
           <v-card class="ma-2" height="425" >
             <v-card-title> {{ item.name }} </v-card-title>
-            <h2 style="color: #FF4081" class="text-center"> {{ item.price }} VNĐ </h2>
+            <h2 style="color: #FF4081" class="text-center"> {{ formatPrice(item.price) }} VNĐ </h2>
             <v-card-text>
               <h3 class="d-flex flex-column mb-6">Chi tiết sản phẩm</h3>
               <v-row>
@@ -42,7 +42,7 @@
                   <h3>Tổng tiền:</h3>
                 </v-col>
                 <v-col cols="12" sm="5">
-                  <h3>{{ item.price * quantity }} VNĐ</h3>
+                  <h3>{{ formatPrice(item.price * quantity) }} VNĐ</h3>
                 </v-col>
               </v-row>
             </v-card-text>
@@ -85,6 +85,10 @@ export default {
     
   },
   methods: {
+    formatPrice(value) {
+      let val = (value).toFixed(0)
+      return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    },
     increment () {
       this.quantity += 1;
     },

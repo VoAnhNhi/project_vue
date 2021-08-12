@@ -4,7 +4,7 @@
       <v-row>
         <v-col cols="12" sm="5">
           <a href="http://localhost:8080/" style="text-decoration: none">
-            <h2 style="font-family: 'Roboto', sans-serif;">Phụng Store</h2>
+            <h2 style="font-family: 'Roboto', sans-serif;">Project Vue</h2>
           </a>
         </v-col>
       </v-row>
